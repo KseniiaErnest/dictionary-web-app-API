@@ -13,12 +13,13 @@ body {
 }
 
 .App {
-  background-color: red;
+
   width: 65.5rem;
   margin: 0 auto;
   text-align: center;
   align-content: center;
-  margin-top: 5rem;
+  padding: 1rem;
+  margin-top: 3rem;
 }
 
 
@@ -27,7 +28,7 @@ body {
   justify-content: space-between;
   align-items: center;
   margin-bottom: 3rem;
-  background-color: #ffffffgit;
+  background-color: #ffffff;
 }
 
 
@@ -62,4 +63,49 @@ body {
 main {
   width: 100%;
   background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.container-one {
+  display: flex;
+  justify-content: space-between;
+}
+
+.container-one div {
+  text-align: left;
+}
+
+.container-one h1 {
+  font-size: 4rem;
+}
+
+.container-one p {
+  color: #a445ed;
+  font-size: 1.25rem;
+
+}
+
+.container-two {
+  display: flex;
+  flex-direction: column;
+  align-items: self-start;
+  gap: 1.5rem;
+  font-size: 1.25rem;
+}
+
+ul {
+  padding-left: 2.5rem;
+}
+
+.meaning {
+  color: #757575;
+  margin-bottom: 1rem;
+}
+
+.container-three {
+  display: flex;
+  gap: 1.5rem;
+  font-size: 1.25rem;
 }
