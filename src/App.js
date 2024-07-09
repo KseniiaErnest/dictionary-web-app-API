@@ -10,27 +10,50 @@ class App extends Component {
   state = {
     apiData: {},
     searchQuery: '',
+    darkMode: false,
   }
 
 
 componentDidMount() {
-    // const url = `https://api.dictionaryapi.dev/api/v2/entries/en/${this.state.searchQuery}`;
-    // const res = await fetch(url);
-    // const data = await res.json();
-    // console.log(data);
+    const darkMode = localStorage.getItem('darkMode') === 'true';
+    this.setState({darkMode});
+    this.applyMode(darkMode);
+  }
 
-    // this.setState({apiData: data[0]})
-
-    this.fetchData(this.state.searchQuery)
+  componentDidUpdate(prevProps, prevState) {
+    if (prevState.darkMode !== this.state.darkMode) {
+      this.applyMode(this.state.darkMode);
+      localStorage.setItem('darkMode', this.state.darkMode);
+    }
   }
 
   fetchData = async (query) => {
-    const url = `https://api.dictionaryapi.dev/api/v2/entries/en/${query}`;
-    const res = await fetch(url);
-    const data = await res.json();
-    console.log(data);
+    if (!query) return;
 
-    this.setState({apiData: data[0]})
+    const url = `https://api.dictionaryapi.dev/api/v2/entries/en/${query}`;
+    try {
+      const res = await fetch(url);
+      if (!res.ok) throw new Error(`Error! Status: ${res.status}`);
+      const data = await res.json();
+      console.log(data);
+  
+      this.setState({apiData: data[0]});
+    } catch(error) {
+      console.error('Error:', error);
+    }
+    
+  }
+
+  toggleMode = () => {
+    this.setState((prevState) => ({darkMode: !prevState.darkMode}));
+  }
+
+  applyMode = (mode) => {
+if (mode) {
+  document.body.classList.add('dark-mode')
+} else {
+  document.body.classList.remove('dark-mode');
+}
   }
 
   render() {
@@ -38,7 +61,7 @@ componentDidMount() {
     const { apiData } = this.state;
     return(
       <div  className="App">
-      <Nav />
+      <Nav toggleMode={this.toggleMode} />
       <Search searchQuery={this.state.searchQuery} onSearch={this.fetchData}/>
       <Main apiData={apiData} />
       </div>

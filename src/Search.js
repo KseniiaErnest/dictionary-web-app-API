@@ -17,6 +17,7 @@ export default class Search extends Component {
     e.preventDefault();
 
     this.props.onSearch(this.state.searchQuery);
+    this.setState({searchQuery: ''});
   }
 
   render() {
