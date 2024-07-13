@@ -10,6 +10,7 @@ html {
 
 body {
   background-color: #ffffff;
+  color: #1f1f1f;
 }
 
 .App {
@@ -42,6 +43,10 @@ body {
   display: flex;
   gap: 1rem;
   align-items: center;
+}
+
+.moon {
+  stroke: #838383;
 }
 
 .search-bar {
@@ -93,6 +98,27 @@ main {
   align-items: self-start;
   gap: 1.5rem;
   font-size: 1.25rem;
+  margin-top: 2rem;
+}
+
+.line {
+  width: 100%;
+ text-align: start;
+ position: relative;
+}
+
+span {
+  position: absolute;
+  width: calc(100% - 4.5rem);
+  top: 50%;
+  left: 4.5rem;
+  height: 1px;
+ color:#9e9e9e41;
+ background-color: #9e9e9e4b;
+ border: none;
+
+  
+
 }
 
 .meaning-box {
@@ -109,9 +135,18 @@ li {
   text-align: left;
 }
 
+li::marker {
+  color: #a445ed;
+}
+
 .meaning {
   color: #757575;
   margin-bottom: 1rem;
+}
+
+.synonyms {
+  color: #a445ed;
+  font-weight: 900;
 }
 
 .container-three {
@@ -119,6 +154,24 @@ li {
   gap: 1.5rem;
   font-size: 1.25rem;
 }
+
+.border {
+  border-top: 1px solid #9e9e9e4b;
+  width: 100%;
+  font-size: 1rem;
+}
+
+.border > .container-three {
+  margin-top: 1.2rem;
+}
+
+
+.wiki-link {
+  color: #1f1f1f;
+  text-decoration: none;
+  border-bottom: 1px solid #9e9e9e4b;
+}
+
 
 /* Slider button */
 label {
@@ -152,7 +205,34 @@ label input:checked + span.fill {
   left: calc(100% - (0.9rem + 3px));
 }
 
+/* DARK MODE */
 body.dark-mode {
   background-color: #050505;
   color: #ffff;
+}
+
+
+body.dark-mode .nav-bar {
+  background-color: #050505;
+}
+
+body.dark-mode .moon {
+  stroke: #a445ed;
+}
+
+body.dark-mode .nav-bar label {
+  background-color: #a445ed;
+}
+
+body.dark-mode .search-bar {
+  background-color: #2d2d2d;
+  color: #fff;
+}
+
+body.dark-mode main {
+  background-color: #050505;
+}
+
+body.dark-mode .wiki-link {
+  color: #fff;
 }
