@@ -24,7 +24,7 @@ Users should be able to:
 - Search for words using the input field
 - See the Free Dictionary API's response for the searched word
 - See a form validation message when trying to submit a blank form
-- Play the audio file for a word when it's available
+- Play the audio file for a word when it's available (not yet implemented)
 - Switch between serif, sans serif, and monospace fonts (not yet implemented)
 - Switch between light and dark themes
 - View the optimal layout for the interface depending on their device's screen size
@@ -55,7 +55,7 @@ If you want more help with writing markdown, we'd recommend checking out [The Ma
 
 ### Continued development
 
-I have not implemented switching between serif, sans serif, and monospace fonts funtionality. This is my next focus.
+I have not implemented switching between serif, sans serif, and monospace fonts and audio functionalities. This is my next focus.
 
 
 ## Author
